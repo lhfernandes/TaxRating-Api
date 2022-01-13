@@ -14,13 +14,15 @@ namespace Domain.Test.Entities
         public void GetValueConvertedUSDTxSegment(int amount, double txConv, double txSeg,double cresult)
         {
             // Arrange
-            var convTest = new ConverterTax(amount, txConv, txSeg);
+            var convTest = new ConverterTax(amount,1);
+
+            convTest.Convert(txConv, txSeg);
 
             // Act
-            var result = convTest.Convert();
+            var result = convTest.ValConverted;
 
             // Assert
-            result.ValConverted.Should().Be(cresult);
+            result.Should().Be(cresult);
         }
     }
 }

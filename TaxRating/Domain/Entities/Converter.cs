@@ -20,11 +20,10 @@ namespace Domain.Entities
 
         }
 
-        public ConverterTax(int amount,double txConv,double txSeb)
+        public ConverterTax(int amount,int segment)
         {
             Amount = amount;
-            TxConversion = txConv;  
-            TxSegment = txSeb;
+            Segment = segment;
         }
 
         public void Convert( double txConv, double txSeb)
